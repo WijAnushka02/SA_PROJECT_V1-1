@@ -4,6 +4,8 @@ import StallMapPage from './pages/StallMapPage'
 import HomePage from './pages/HomePage'
 import EmployeePortalPage from './pages/EmployeePortalPage'
 import Navbar from './Components/Navbar'
+import Footer from "./Components/Footer"
+
 
 function App() {
     return (
@@ -18,6 +20,8 @@ function App() {
                 <Route path="/home" element={<HomePage />} />
                 <Route path="/employee" element={<EmployeePortalPage />} />
             </Routes>
+
+            <Footer />
 
         </div>
     )
