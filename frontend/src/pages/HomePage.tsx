@@ -74,40 +74,46 @@ function HomePage() {
                     </div>
                 </section>
 
-                {/* Genres Section */}
-                <section className="mb-14">
-                    <h2 className="text-xl font-semibold mb-6">
+                {/* ================= GENRES SECTION ================= */}
+                <section className="mb-14 text-center">
+                    <h2 className="text-xl font-semibold mb-8">
                         Literary Genres You'll Display
                     </h2>
 
-                    <div className="flex flex-wrap gap-3 mb-6">
+                    {/* Add Genre Form - Centered */}
+                    <form
+                        onSubmit={handleAddGenre}
+                        className="flex justify-center items-center gap-4 mb-8"
+                    >
+                        <input
+                            type="text"
+                            value={newGenre}
+                            onChange={(e) => setNewGenre(e.target.value)}
+                            placeholder="Add a genre..."
+                            className="border rounded-lg px-4 py-3 w-full max-w-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        />
+                        <button
+                            type="submit"
+                            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg transition"
+                        >
+                            Add
+                        </button>
+                    </form>
+
+                    {/* Displayed Genres - Centered */}
+                    <div className="flex flex-wrap justify-center gap-3 mb-8">
                         {genres?.map((genre) => (
                             <span
                                 key={genre.id}
-                                className="bg-blue-100 text-blue-800 px-4 py-1 rounded-full text-sm"
+                                className="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm shadow-sm"
                             >
                                 {genre.name}
                             </span>
                         ))}
                     </div>
 
-                    <form onSubmit={handleAddGenre} className="flex gap-3 mb-6">
-                        <input
-                            type="text"
-                            value={newGenre}
-                            onChange={(e) => setNewGenre(e.target.value)}
-                            placeholder="Add a genre..."
-                            className="border rounded-lg px-4 py-2 flex-1 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                        />
-                        <button
-                            type="submit"
-                            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition"
-                        >
-                            Add
-                        </button>
-                    </form>
-
-                    <div className="flex flex-wrap gap-3">
+                    {/* Quick Add Buttons - Centered */}
+                    <div className="flex flex-wrap justify-center gap-3">
                         {commonGenres.map((genre) => (
                             <button
                                 key={genre}
@@ -115,13 +121,14 @@ function HomePage() {
                                 onClick={() =>
                                     addGenreMutation.mutate({ userId, name: genre })
                                 }
-                                className="border px-4 py-1 rounded-full text-sm hover:bg-gray-100 transition"
+                                className="border px-5 py-2 rounded-full text-sm hover:bg-gray-100 transition"
                             >
                                 + {genre}
                             </button>
                         ))}
                     </div>
                 </section>
+                {/* =================================================== */}
 
                 {/* Our Website Section */}
                 <section className="text-center mt-16">
@@ -134,8 +141,7 @@ function HomePage() {
                     <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed mt-8">
                         Welcome to our Book Fair Stall Reservation System, a simple and
                         efficient platform designed to make stall booking easier for vendors
-                        and organizers. This website allows book sellers, publishers, and
-                        exhibitors to reserve stalls online without any hassle.
+                        and organizers.
                     </p>
 
                     <button className="mt-8 bg-yellow-500 hover:bg-yellow-600 text-white px-8 py-2 rounded-lg shadow transition">
@@ -156,5 +162,5 @@ function HomePage() {
     )
 }
 
-export default HomePage
+export default HomePage;
 
