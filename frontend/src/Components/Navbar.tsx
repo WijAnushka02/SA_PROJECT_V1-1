@@ -10,17 +10,17 @@ function Navbar() {
             className="bg-blue-800 shadow"
             variant="dark"
         >
-            <Container fluid className="px-3">
+            <Container fluid className="px-4">
 
-                {/* Logo */}
+                {/* Logo - Far Left */}
                 <BootstrapNavbar.Brand
                     as={Link}
                     to="/home"
-                    className="d-flex align-items-center gap-2 text-4xl font-extrabold tracking-wide m-0"
+                    className="d-flex align-items-center gap-2 text-3xl fw-bold m-0"
                 >
-                    <FaBookOpen className="text-yellow-300 text-3xl" />
+                    <FaBookOpen className="text-yellow-300 fs-4" />
                     <span className="text-white">
-                        Bookfair<span className="text-yellow-300">Zone</span>
+                        Bookfair<span className="text-warning">Zone</span>
                     </span>
                 </BootstrapNavbar.Brand>
 
@@ -28,9 +28,10 @@ function Navbar() {
 
                 <BootstrapNavbar.Collapse id="basic-navbar-nav">
 
-                    {/* LEFT SIDE LINKS */}
-                    <Nav className="me-auto">
+                    {/* Push everything to right */}
+                    <Nav className="ms-auto align-items-center">
 
+                        {/* Navigation Links */}
                         <Nav.Link
                             as={Link}
                             to="/home"
@@ -50,17 +51,17 @@ function Navbar() {
                         <Nav.Link
                             as={Link}
                             to="/employee"
-                            className="text-white fs-5 fw-semibold"
+                            className="text-white fs-5 fw-semibold me-4"
                         >
                             Employee Portal
                         </Nav.Link>
 
-                    </Nav>
+                        {/* Logout Button */}
+                        <Button variant="outline-light">
+                            Logout
+                        </Button>
 
-                    {/* RIGHT SIDE BUTTON */}
-                    <Button variant="outline-light">
-                        Logout
-                    </Button>
+                    </Nav>
 
                 </BootstrapNavbar.Collapse>
 
