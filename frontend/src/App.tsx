@@ -9,22 +9,22 @@ import Footer from "./Components/Footer"
 
 function App() {
     return (
-        <div className="min-h-screen bg-gray-50">
-            
-            {/* ✅ Navbar added here */}
+        <div className="d-flex flex-column min-vh-100">
             <Navbar />
-
-            <Routes>
-                <Route path="/" element={<RegisterPage />} />
-                <Route path="/stalls" element={<StallMapPage />} />
-                <Route path="/home" element={<HomePage />} />
-                <Route path="/employee" element={<EmployeePortalPage />} />
-            </Routes>
+            <div className="flex-grow-1">
+                <Routes>
+                    <Route path="/" element={<RegisterPage />} />
+                    <Route path="/stalls" element={<StallMapPage />} />
+                    <Route path="/home" element={<HomePage />} />
+                    <Route path="/employee" element={<EmployeePortalPage />} />
+                </Routes>
+            </div>
 
             <Footer />
 
         </div>
     )
 }
+
 
 export default App;

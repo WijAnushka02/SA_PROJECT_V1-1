@@ -23,3 +23,45 @@
     border-color: #ffc107 !important;
     transform: scale(1.05);
 }
+
+/* ========================= */
+/* Modern Gradient Glass Footer */
+/* ========================= */
+
+.modern-footer {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Footer Links */
+.footer-link {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #ffc107;
+    padding-left: 5px;
+}
+
+/* Social Icons */
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+.social-icon:hover {
+    background: #ffc107;
+    color: black;
+    transform: scale(1.1);
+}
