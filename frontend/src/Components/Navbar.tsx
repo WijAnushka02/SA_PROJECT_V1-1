@@ -12,13 +12,13 @@ function Navbar() {
         >
             <Container fluid className="px-4">
 
-                {/* Logo - Far Left */}
+                {/* Logo */}
                 <BootstrapNavbar.Brand
                     as={Link}
                     to="/home"
                     className="d-flex align-items-center gap-2 text-3xl fw-bold m-0"
                 >
-                    <FaBookOpen className="text-yellow-300 fs-4" />
+                    <FaBookOpen className="text-warning fs-4" />
                     <span className="text-white">
                         Bookfair<span className="text-warning">Zone</span>
                     </span>
@@ -28,14 +28,12 @@ function Navbar() {
 
                 <BootstrapNavbar.Collapse id="basic-navbar-nav">
 
-                    {/* Push everything to right */}
                     <Nav className="ms-auto align-items-center">
 
-                        {/* Navigation Links */}
                         <Nav.Link
                             as={Link}
                             to="/home"
-                            className="text-white fs-5 fw-semibold me-4"
+                            className="text-white fs-5 fw-semibold me-4 nav-hover"
                         >
                             Home
                         </Nav.Link>
@@ -43,7 +41,7 @@ function Navbar() {
                         <Nav.Link
                             as={Link}
                             to="/stalls"
-                            className="text-white fs-5 fw-semibold me-4"
+                            className="text-white fs-5 fw-semibold me-4 nav-hover"
                         >
                             Stalls
                         </Nav.Link>
@@ -51,13 +49,15 @@ function Navbar() {
                         <Nav.Link
                             as={Link}
                             to="/employee"
-                            className="text-white fs-5 fw-semibold me-4"
+                            className="text-white fs-5 fw-semibold me-4 nav-hover"
                         >
                             Employee Portal
                         </Nav.Link>
 
-                        {/* Logout Button */}
-                        <Button variant="outline-light">
+                        <Button
+                            variant="outline-light"
+                            className="logout-btn"
+                        >
                             Logout
                         </Button>
 
